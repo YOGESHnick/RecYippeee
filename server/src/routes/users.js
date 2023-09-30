@@ -15,4 +15,4 @@ router.post("/register", async(req,res)=>{
 
 router.post("/login");
 
-export {router as userRouter};
+export {router as userRouter}; 
