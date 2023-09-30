@@ -9,8 +9,11 @@ router.post("/register", async(req,res)=>{
 
     const {username,password} = req.body;
     const user = await UserModel.findOne({ username });
-    res.json(user);
-    console.log(user);
+
+    if(user){
+        return res.json({message:"User already exists!"});
+    }
+    
 });
 
 router.post("/login");
