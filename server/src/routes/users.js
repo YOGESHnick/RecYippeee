@@ -13,6 +13,7 @@ router.post("/register", async(req,res)=>{
     if(user){
         return res.json({message:"User already exists!"});
     }
+    const hashedPassword = bcrypt.hash(password,10);
     
 });
 
