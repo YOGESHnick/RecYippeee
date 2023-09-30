@@ -35,7 +35,7 @@ router.post("/login", async (req,res)=>{
     if(!isPasswordValid){
         return res.json({message:"Username and password don't match!"});
     }
-    const token = jwt.sign({id:user._id}."secret");
+    const token = jwt.sign({id:user._id},"secret");
     res.json({token,userID: user._id});
 
 });
