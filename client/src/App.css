@@ -33,7 +33,11 @@ a {
   margin: 10px;
   font-size: 15px;
 }
-
+.form-group {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 20px;
+}
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
     animation: App-logo-spin infinite 20s linear;
