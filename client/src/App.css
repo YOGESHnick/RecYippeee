@@ -38,6 +38,13 @@ a {
   flex-direction: column;
   margin-bottom: 20px;
 }
+.auth{
+  display: flex;
+  margin-top: 20vh;
+}
+Form{
+  margin-left: 20px;
+}
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
     animation: App-logo-spin infinite 20s linear;
