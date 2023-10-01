@@ -30,6 +30,11 @@ const Register = ()=>{
     const [password,setPassword]  = useState("");
     const onSubmit= async(event)=>{
         event.preventDefault();
+        try {
+            await axios.post("http://localhost:3001/auth/register")
+        } catch (error) {
+            
+        }
     }
     return (
         <Form 
