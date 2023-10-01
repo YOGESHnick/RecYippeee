@@ -31,9 +31,13 @@ const Register = ()=>{
     const onSubmit= async(event)=>{
         event.preventDefault();
         try {
-            await axios.post("http://localhost:3001/auth/register")
+            await axios.post("http://localhost:3001/auth/register",{
+                username,
+                password,
+            });
+            alert("Registered Succesfully...Now login again..");
         } catch (error) {
-            
+            console.log(error);
         }
     }
     return (
@@ -59,7 +63,7 @@ const Form = ({username,setUsername,password,setPassword,label,onSubmit})=>{
                 </div>
                 <div className="form-group">
                     <label htmlFor="username">Password : </label>
-                    <input type="text" id="password" value={password} onChange={(event)=>setPassword(event.target.value) } />
+                    <input type="password" id="password" value={password} onChange={(event)=>setPassword(event.target.value) } />
                 </div>
                 <button type="submit" >{label}</button>
             </form>
