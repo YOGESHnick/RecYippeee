@@ -21,6 +21,7 @@ const Login = ()=>{
             password={password} 
             setPassword={setPassword} 
             label="Login"
+            onSubmit={onSubmit}
         />
     );
 };
