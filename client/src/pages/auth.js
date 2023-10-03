@@ -17,6 +17,7 @@ const Login = ()=>{
     const [username,setUsername]  = useState("");
     const [password,setPassword]  = useState("");
     const [_,setCookies] = useCookies(["access_token"]);
+    const navigate = useNavigate();
 
     const onSubmit= async (event) => {
         event.preventDefault();
@@ -25,8 +26,10 @@ const Login = ()=>{
                 username,
                 password,
             });
+            // console.log(response);
             setCookies("access_token", response.data.token);
             window.localStorage.setItem("userID",response.data.userID);
+            navigate("/");
         } catch (error) {
             console.log(error);
         }
@@ -41,7 +44,7 @@ const Login = ()=>{
             label="Login"
             onSubmit={onSubmit}
         />
-    );
+    ); 
 };
 
 const Register = ()=>{
@@ -81,7 +84,7 @@ const Form = ({username,setUsername,password,setPassword,label,onSubmit})=>{
                     <input type="text" id="username" value={username} onChange={(event)=>setUsername(event.target.value) } />
                 </div>
                 <div className="form-group">
-                    <label htmlFor="username">Password : </label>
+                    <label htmlFor="password">Password : </label>
                     <input type="password" id="password" value={password} onChange={(event)=>setPassword(event.target.value) } />
                 </div>
                 <button type="submit" >{label}</button>
