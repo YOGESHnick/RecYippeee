@@ -1,5 +1,6 @@
 import {useState} from "react";
 import axios from "axios";
+import { useCookies } from "react-cookie";
 
 export const Auth = ()=>{
     return (
@@ -18,7 +19,7 @@ const Login = ()=>{
     const onSubmit= async (event) => {
         event.preventDefault();
         try {
-            await axios.post("http://localhost:3001/auth/register",{
+            const response =  await axios.post("http://localhost:3001/auth/login",{
                 username,
                 password,
             });
