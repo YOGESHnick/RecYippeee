@@ -14,6 +14,19 @@ export const Auth = ()=>{
 const Login = ()=>{
     const [username,setUsername]  = useState("");
     const [password,setPassword]  = useState("");
+
+    const onSubmit= async (event) => {
+        event.preventDefault();
+        try {
+            await axios.post("http://localhost:3001/auth/register",{
+                username,
+                password,
+            });
+        } catch (error) {
+            console.log(error);
+        }
+    }
+
     return (
         <Form 
             username={username} 
