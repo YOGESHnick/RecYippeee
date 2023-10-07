@@ -9,7 +9,7 @@ app.use(cors());
 app.use("/auth",userRouter);
 
 mongoose.connect(
-    "mongodb+srv://yogeshshamlin:Nickyzander%40%32%30%30%34@cluster0.4a6cuu0.mongodb.net/RecYipeee?retryWrites=true&w=majority",
+    // "mongodb+srv://yogeshshamlin:Nickyzander%40%32%30%30%34@cluster0.4a6cuu0.mongodb.net/RecYipeee?retryWrites=true&w=majority",
     {
         useNewUrlParser: true,
         useUnifiedTopology: true,
