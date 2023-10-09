@@ -8,9 +8,9 @@ const router = express.Router();
 router.post("/register", async (req, res) => {
   console.log(req.body);
     const { username, password } = req.body;
-    const user = await UserModel.findOne({ username });
+    const user = await UserModel.countDocuments({ username });
   
-    if (user) {
+    if (user > 0) {
       return res.json({ message: "User already exists!" });
     }
   
