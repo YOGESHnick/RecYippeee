@@ -21,12 +21,16 @@ const Login = ()=>{
 
     const onSubmit= async (event) => {
         event.preventDefault();
+        if (!username || !password) {
+            alert("Please enter both username and password.");
+            return;
+        }
         try {
             const response =  await axios.post("http://localhost:3001/auth/login",{
                 username,
                 password,
             });
-            // console.log(response);
+            console.log(response);
             setCookies("access_token", response.data.token);
             window.localStorage.setItem("userID",response.data.userID);
             navigate("/");

@@ -13,13 +13,6 @@ router.post("/register", async (req, res) => {
     if (user > 0) {
       return res.json({ message: "User already exists!" });
     }
-  
-    // const hashedPassword = await bcrypt.hash(password, 10);
-    // const newUser = new UserModel({
-    //   username,
-    //   password: hashedPassword,
-    // });
-    // await newUser.save();
 
     try {
       const hashedPassword = await bcrypt.hash(password, 10); // Await the hash function
@@ -39,12 +32,13 @@ router.post("/register", async (req, res) => {
 // router.post("/login", async (req,res)=>{
 //     const {username,password} = req.body;
 //     const user = await UserModel.findOne({ username });
-
+//     console.log(user);
 //     if(!user){
 //         return res.json({message:"User doesn't exist!"});
 //     }
 
 //     const isPasswordValid = await bcrypt.compare( password , user.password);
+//     console.log(isPasswordValid);
 //     if(!isPasswordValid){
 //         return res.json({message:"Username and password don't match!"});
 //     }
@@ -52,5 +46,34 @@ router.post("/register", async (req, res) => {
 //     res.json({token,userID: user._id});
 
 // }); 
+
+router.post("/login", async (req, res) => {
+  const { username, password } = req.body;
+
+  if (!username || !password) {
+      return res.status(400).json({ message: "Username and password are required." });
+  }
+
+  try {
+      const user = await UserModel.findOne({ username });
+      if (!user) {
+          return res.status(401).json({ message: "User doesn't exist!" });
+      }
+
+      const isPasswordValid = await bcrypt.compare(password, user.password);
+      if (!isPasswordValid) {
+          return res.status(401).json({ message: "Username and password don't match!" });
+      }
+      const token = jwt.sign({ id: user._id }, "secret");
+
+      res.json({ token, userID: user._id });
+  } catch (error) {
+      console.error(error);
+      res.status(500).json({ message: "Internal server error" });
+  }
+});
+
+
+
 
 export {router as userRouter};
