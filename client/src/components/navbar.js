@@ -19,7 +19,7 @@ export const Navbar = ()=>{
     }
     return (
         <div className="navbar">
-            <Link to="/" ><i className="fa fa-home"></i>Home</Link> 
+            <Link to="/home" ><i className="fa fa-home"></i>Home</Link> 
             <Link to="/create-recipe" ><FontAwesomeIcon icon={faUtensils} />Create a RecYippee!</Link> 
             <Link to="/saved-recipes" ><FontAwesomeIcon icon={faBookmark} />Saved RecYippees</Link> 
             {!cookies.access_token ? (

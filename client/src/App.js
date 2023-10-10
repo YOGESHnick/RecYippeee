@@ -12,10 +12,12 @@ function App() {
       <Router>
         <Navbar />
         <Routes>
-          <Route path="/auth" element = {<Auth />} />
-          <Route path="/" element = {<Home />} />
+          <Route path="/" element = {<Auth />} />
+          <Route path="/home" element = {<Home />} />
           <Route path="/create-recipe" element = {<CreateRecipe />} />
           <Route path="/saved-recipes" element = {<SavedRecipes />} />
+          <Route path="/auth" element = {<Auth />} />  
+          {/* delete line 19 and change "/"to render Home instead of auth */}
         </Routes>
       </Router>
     </div>
