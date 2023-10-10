@@ -33,7 +33,7 @@ const Login = ()=>{
             console.log(response);
             setCookies("access_token", response.data.token);
             window.localStorage.setItem("userID",response.data.userID);
-            navigate("/");
+            navigate("/home");
         } catch (error) {
             console.log(error);
         }
