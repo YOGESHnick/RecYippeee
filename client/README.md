@@ -27,5 +27,6 @@ It's so simple to use :
 + Just drag and drop this folder to netlify
 + Your react app will be deployed by now and you can change the URL as you wish!
 
-
+\
+\
 > **©** 2023 ZanderTech
