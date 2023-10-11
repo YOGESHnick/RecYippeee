@@ -25,7 +25,7 @@ The app is ready to be deployed!
 ### Deployment
 I personally use Netlify to deploy my React apps.\
 It's so simple to use :
-+ run #### `npm build` 
++ run ###`npm build` 
 
 ### `npm run build` fails to minify
 
