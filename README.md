@@ -6,7 +6,7 @@ This is a website where users can share recipes for dishes they make\
 The intention of the site / product (`maybe`) is to provide recipes for healthy dishes!
 
 ## Available Scripts
-
+### Client side :
 ### `npm start`
 
 Runs the app in the development mode.\
@@ -15,20 +15,15 @@ Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 The page will reload when you make changes.\
 You may also see any lint errors in the console.
 
-### `npm run build`
+### Server side :
+### `npm start`
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Runs the app in the development mode.\
+Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
-The app is ready to be deployed!
+The page will reload when you make changes.\
+You may also see any lint errors in the console.
 
-### `Deployment`
-I personally use [Netlify](https://www.netlify.com/) to deploy my React apps.\
-It's so simple to use :
-+ run `npm build`
-+ This creates a `build` folder in your workspace
-+ Just drag and drop this folder to netlify
-+ Your react app will be deployed by now and you can change the URL as you wish!
 
 
 > **©** 2023 ZanderTech
