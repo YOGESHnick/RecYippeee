@@ -9,7 +9,7 @@ The intention of the site / product (`maybe`) is to provide recipes for healthy 
 ### Client side :
 ### `npm start`
 <div style="background-color: green; padding: 10px; border-radius: 5px;">
-  <code style="background-color: inherit; color: white;">`npm start`</code>
+  <code style="background-color: inherit; color: green;">`npm start`</code>
 </div>
 
 Runs the app in the development mode.\
