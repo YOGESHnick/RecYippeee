@@ -8,7 +8,6 @@ The intention of the site / product (`maybe`) is to provide recipes for healthy 
 ## Available Scripts
 ### Client side :
 ### `npm start`
-<h1 style="color: #ff5733;">Your Colored Heading</h1>
 
 Runs the app in the development mode.\
 Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
