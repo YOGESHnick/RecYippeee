@@ -25,7 +25,10 @@ The app is ready to be deployed!
 ### Deployment
 I personally use Netlify to deploy my React apps.\
 It's so simple to use :
-+ run ###`npm build` 
++ run `npm build`
++ This creates a `build` folder in your workspace
++ Just drag and drop this folder to netlify
++ Your react app will be deployed by now and you can change the URL as you wish!
 
 ### `npm run build` fails to minify
 
