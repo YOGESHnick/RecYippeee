@@ -20,7 +20,7 @@ It correctly bundles React in production mode and optimizes the build for the be
 The app is ready to be deployed!
 
 ### `Deployment`
-I personally use ` [Netlify](https://www.netlify.com/) `to deploy my React apps.\
+I personally use `[Netlify](https://www.netlify.com/)` to deploy my React apps.\
 It's so simple to use :
 + run `npm build`
 + This creates a `build` folder in your workspace
