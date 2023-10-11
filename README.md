@@ -8,9 +8,6 @@ The intention of the site / product (`maybe`) is to provide recipes for healthy 
 ## Available Scripts
 ### Client side :
 ### `npm start`
-<div style="background-color: green; padding: 10px; border-radius: 5px;">
-  <code style="background-color: inherit; color: green;">`npm start`</code>
-</div>
 
 Runs the app in the development mode.\
 Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
