@@ -2,7 +2,8 @@
 
 # **About** :
 
-This is the front-end React part for the complete RecYippee site 
+This is a website where users can share recipes for dishes they make\
+The intention of the site/product > maybe
 
 ## Available Scripts
 
