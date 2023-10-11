@@ -9,6 +9,10 @@ The intention of the site/product (`maybe`) is to provide recipes for healthy di
 ### Client side :
 ### `npm start`
 
+```terminal
+npm start
+```
+
 Runs the app in the development mode.\
 Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
@@ -17,6 +21,10 @@ You may also see any lint errors in the console.
 
 ### Server side :
 ### `npm start`
+
+```terminal
+npm start
+```
 
 Runs the app in the development mode.\
 Open [http://localhost:3001](http://localhost:3001) to view it in your browser.
