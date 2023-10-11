@@ -29,4 +29,3 @@ It's so simple to use :
 + Your react app will be deployed by now and you can change the URL as you wish!
 
 
-
