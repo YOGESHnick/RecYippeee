@@ -1,4 +1,4 @@
-# About :
+# **About** :
 
 This is the front-end React part for the complete RecYippee site 
 
