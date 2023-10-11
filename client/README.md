@@ -28,6 +28,6 @@ It's so simple to use :
 + Just drag and drop this folder to netlify
 + Your react app will be deployed by now and you can change the URL as you wish!
 
-### `npm run build` fails to minify
+
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
