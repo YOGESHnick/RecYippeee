@@ -10,7 +10,9 @@ export const CreateRecipe = ()=>{
                 <label htmlFor="instructions" >Instructions</label>
                 <textarea type="text" id="instructions" name="istructions" > </textarea>
                 <label htmlFor="imageUrl" >Image URL</label>
-                <input type="text" id="imageUrl"  />
+                <input type="text" id="imageUrl" name="imageUrl"  />
+                <label htmlFor="cooikingTime" >Cooking Time (minutes)</label>
+                <input type="text" id="cooikingTime" name="cooikingTime"  />
             </form>
         </div>
     )
