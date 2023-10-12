@@ -42,11 +42,11 @@ export const CreateRecipe = ()=>{
                     name="imageUrl" 
                     onChange={handleChage} 
                 />
-                <label htmlFor="cooikingTime" >Cooking Time (minutes)</label>
+                <label htmlFor="cookingTime" >Cooking Time (minutes)</label>
                 <input 
                     type="text" 
-                    id="cooikingTime" 
-                    name="cooikingTime" 
+                    id="cookingTime" 
+                    name="cookingTime" 
                     onChange={handleChage}
                 />
             </form>
