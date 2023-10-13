@@ -1,23 +1,28 @@
 import { useState } from "react";
 import axios from 'axios';
+import {useGetUserID} from '../hooks/useGetUserID';
 
 export const CreateRecipe = ()=>{
+    const userID=useGetUserID();
+    console.log(userID);
     const [recipe,setRecipe]=useState({
         name: "",
         ingredients:[],
         instructions:"",
         imageUrl:"",
-        cooikingTime:0,
-        userOwner:0,
+        cookingTime:0,
+        userOwner:userID,
     });
 
-    const handleChage = (event)=>{
+
+    const handleChange = (event)=>{
         const {name,value}=event.target;
+        console.log(value);
         setRecipe({...recipe, [name] : value})
     }
-    const handleIngredientChage = (event,idx)=>{
+    const handleIngredientChange = (event,idx)=>{
         const {value}=event.target;
-        const ingredients = recipe.ingredients;
+        const ingredients = [...recipe.ingredients];
         ingredients[idx]=value;
         setRecipe({...recipe, ingredients})
     }
@@ -28,6 +33,7 @@ export const CreateRecipe = ()=>{
     const onSubmit = async (event)=>{
         event.preventDefault();
         try {
+            console.log(recipe);
             await axios.post("http://localhost:3001/recipes",recipe);
             alert("Recipe created!");
         } catch (error) {
@@ -44,12 +50,12 @@ export const CreateRecipe = ()=>{
                     type="text" 
                     id="name" 
                     name="name" 
-                    onChange={handleChage} 
+                    onChange={handleChange} 
                 />
                 <label htmlFor="ingredients" >Ingredients</label>
                 {recipe.ingredients.map( (ingredient,idx)=>(
                     <input key={idx} type="text" name="ingredients" value={ingredient}
-                    onChange={ (event)=>handleIngredientChage(event,idx) }
+                    onChange={ (event)=>handleIngredientChange(event,idx) }
                     />
                 ) )}
                 <button onClick={addIngredient} type="button">+</button>
@@ -57,22 +63,23 @@ export const CreateRecipe = ()=>{
                 <textarea 
                 type="text" 
                     id="instructions" 
-                    name="istructions" 
-                    onChange={handleChage}
+                    name="instructions" 
+                    onChange={handleChange}
                 ></textarea>
                 <label htmlFor="imageUrl" >Image URL</label>
                 <input 
                     type="text" 
                     id="imageUrl" 
                     name="imageUrl" 
-                    onChange={handleChage} 
+                    onChange={handleChange} 
                 />
+
                 <label htmlFor="cookingTime" >Cooking Time (minutes)</label>
                 <input 
                     type="text" 
                     id="cookingTime" 
                     name="cookingTime" 
-                    onChange={handleChage}
+                    onChange={handleChange}
                 />
                 <button type="submit">Create RecYippee!</button>
             </form>

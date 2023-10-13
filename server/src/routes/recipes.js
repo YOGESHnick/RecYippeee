@@ -15,16 +15,42 @@ router.get("/", async (req,res)=>{
     }
 })
 
-router.post("/", async (req,res)=>{
-    const recipe = new RecipeModel(req.body);
+// router.post("/", async (req,res)=>{
+//      console.log(req.body);
+//      const recipe = new RecipeModel(req.body);
+//      console.log(recipe);
+//     try {
+//         const response = await recipe.save();
+//         console.log(response);
+//         res.json(response);
+//     } catch (err) {
+//         res.json(err);
+//     } 
+// });
+router.post("/", async (req, res) => {
+    console.log(req.body);
+    // const recipe = new RecipeModel(req.body);
+    const recipe = new RecipeModel({
+        _id: new mongoose.Types.ObjectId(),
+        name: req.body.name,
+        image: req.body.image,
+        ingredients: req.body.ingredients,
+        instructions: req.body.instructions,
+        imageUrl: req.body.imageUrl,
+        cookingTime: req.body.cookingTime,
+        userOwner: req.body.userOwner,
+      });
+    console.log(recipe);
     try {
         const response = await recipe.save();
         console.log(response);
-        res.json(response);
+        res.status(201).json(response); // Use 201 for "Created" status
     } catch (err) {
-        res.json(err);
-    } 
+        console.error(err); // Log the error for debugging
+        res.status(500).json({ error: "An error occurred while saving the recipe." });
+    }
 });
+
 
 router.put("/", async (req,res)=>{
     

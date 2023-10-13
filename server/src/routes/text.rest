@@ -10,7 +10,7 @@ Content-Type: application/json
     "instructions":"cook at hight heat and baste it ",
     "imageURL": 
     "https://www.seriouseats.com/thmb/WzQz05gt5witRGeOYKTcTqfe1gs=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/butter-basted-pan-seared-steaks-recipe-hero-06-03b1131c58524be2bd6c9851a2fbdbc3.jpg",
-    "cookingTime":30,
+    "cookingTime":20,
     "userOwner":"6523a608bd41b518b9b86907"
 }
 
