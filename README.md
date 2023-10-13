@@ -4,7 +4,6 @@
 
 This is a website where users can share recipes for dishes they make\
 The intention of the site/product (`maybe`) is to provide recipes for healthy dishes!
-
 ## Available Scripts
 ### Client side :
 ### `npm start`
