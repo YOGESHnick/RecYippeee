@@ -25,7 +25,7 @@ export const CreateRecipe = ()=>{
         setRecipe({...recipe,ingredients: [...recipe.ingredients, ""]});
     }
 
-    const onSubmit = (event)=>{
+    const onSubmit = async (event)=>{
         event.preventDefault();
         try {
             await axios.post("http://localhost:3001/recipes",recipe);
