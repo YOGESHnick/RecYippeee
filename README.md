@@ -17,7 +17,6 @@ Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
 ### Server side :
 ### `npm start`
-
 ```terminal
 npm start
 ```
