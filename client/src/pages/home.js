@@ -1,9 +1,14 @@
 import { useState , useEffect } from "react";
 import axios from "axios";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faBookmark } from '@fortawesome/free-solid-svg-icons';
+import {useGetUserID} from '../hooks/useGetUserID';
 
 export const Home = ()=>{
 
     const [recipes ,setRecipes ]=useState([]);
+    const [savedRecipes ,setSavedRecipes ]=useState([]);
+    const userID=useGetUserID();
     useEffect( ()=>{
         const fetchRecipe =  async ()=>{
             try {
@@ -13,10 +18,38 @@ export const Home = ()=>{
             } catch (error) {
                 console.log(error);
             }
+        };
+        const fetchSavedRecipe =  async ()=>{
+            try {
+                console.log(userID);
+                const response = await axios.get(
+                    `http://localhost:3001/recipes/savedRecipes/ids/${userID}`
+                     );
+                setSavedRecipes(response.data.savedRecipes); 
+            } catch (error) {
+                console.log(error);
+            }
         }
 
         fetchRecipe();
+        fetchSavedRecipe();
     },[]);
+
+    const saveRecipe = async (recipeID)=>{
+        try {
+            const response = await axios.put ("http://localhost:3001/recipes",{
+                recipeID,
+                userID
+            });
+            setRecipes(response.data.savedRecipes);
+            console.log(response);
+        } catch (error) {
+            console.log(error);
+        }
+    }
+
+    const isRecipeSaved = (id)=> savedRecipes.includes(id)
+
     return (
         <div>
             <h1 className="heading" >Recipes</h1> 
@@ -24,7 +57,23 @@ export const Home = ()=>{
                 {recipes.map( (recipe)=>(
                      <li key={recipe._id}>
                         <div>
-                            <h2>Dish : {recipe.name}</h2> 
+                            <h2>Dish : {recipe.name}</h2>
+                            {savedRecipes.includes(recipe._id) && <h4>Already Saved!</h4> }
+                            <button
+                              onClick={() => saveRecipe(recipe._id)}
+                              disabled={isRecipeSaved(recipe._id)}
+                            >
+                              <FontAwesomeIcon icon={faBookmark} />
+                            </button>
+                            {/* {savedRecipes.includes(recipe._id) ? (
+                                  <h4>Already Saved!</h4>
+                                ) : (
+                                    <button 
+                                    onClick={ ()=> saveRecipe(recipe._id) }><FontAwesomeIcon icon={faBookmark} 
+                                    disabled={isRecipeSaved(recipe._id)}    
+                                    />
+                                    </button>
+                                )} */}
                             <img src={recipe.imageUrl} alt={recipe.namen} />
                         </div>
                         <div className="instructions">
