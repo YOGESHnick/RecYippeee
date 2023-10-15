@@ -25,12 +25,20 @@ export const Home = ()=>{
                      <li key={recipe._id}>
                         <div>
                             <h2>Dish : {recipe.name}</h2> 
+                            <img src={recipe.imageUrl} alt={recipe.namen} />
                         </div>
                         <div className="instructions">
                             <h2>Instructions:</h2> 
                             <h3>{recipe.instructions }</h3>
                         </div>
-                        <img src={recipe.imageUrl} alt={recipe.namen} />
+                        <div className="ingredients">
+                            <h2>Ingredients</h2>
+                            <ul>
+                                {recipe.ingredients.map( (item)=>(
+                                    <li key={item}><h3>{item}</h3></li>
+                                ))}
+                            </ul>
+                        </div>
                         <h2>Cooking Time : {recipe.cookingTime} (minutes) </h2>
                      </li>
                 ) )}

@@ -114,3 +114,9 @@ li img{
   margin-left: 20%;
   text-decoration: underline;
 }
+.ingredients li {
+  margin-left: 14%;
+  text-decoration: none;
+  border:none;
+  margin-bottom: 10px;
+} 
