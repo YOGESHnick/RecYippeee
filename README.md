@@ -22,7 +22,7 @@ npm start
 ```
 Runs the app in the development mode.\
 Open [http://localhost:3001](http://localhost:3001) to view it in your browser.
-> Custom run script
+
 The page will reload when you make changes to the [index.js](https://github.com/YOGESHnick/RecYippeee/blob/main/server/src/index.js) file.\
 You may also see any lint errors in the console.
 
