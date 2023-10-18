@@ -1,7 +1,7 @@
 # RecYippeee
 
 # **About** :
-This is a website where users can share recipes for dishes they make\
+This is a website where users can share recipes for dishes they make, **anonymously**\
 The intention of the site/product  is to provide recipes for healthy dishes!
 ## Available Scripts
 ### Client side :
