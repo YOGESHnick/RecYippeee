@@ -2,7 +2,8 @@
 
 # **About** :
 This is a website where users can share recipes for dishes they make, **anonymously**\
-The intention of the site/product  is to provide recipes for healthy dishes!
+The intention of the site/product  is to provide recipes for healthy dishes!\
+Hoping to show up health-oriented recipes to the users
 ## Available Scripts
 ### Client side :
 ### `npm start`
